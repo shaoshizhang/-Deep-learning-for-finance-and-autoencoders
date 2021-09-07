@@ -1,1 +1,6 @@
-# -Deep-learning-for-finance-and-autoencoders
+This project has 2 parts. 
+
+The goal of the first part is to implement the first part of the deep portfolio method presented in the article Deep learning for
+finance: deep portfolios by Heaton, Polson & Witte (2016). I trained an autoencoder to encode the time-series of price data. The network architecture is described in the article and implemented using Keras. The autoencoder has a single layer of encoder weights, an encoded dimension of 5 (i.e. 5 hidden units), and a single layer of decoder weights. Both weight layers are regularized with an L2 penalty. The encoder layer has ReLu activation and the decoder layer sigmoid activation. The loss is mean squared error( mse ). I used Adam as the optimizer. X_valid is used to find the best value for the L2 regularization parameter (lambda). Once the network is trained and the best value for lambda is found I selected the 10 most communal and the 20 least communal stocks. The degree of communality is measured with the reconstruction loss.
+
+The goal of the second part is to implement the second part of deep portfolio method presented in the article. During the first part, I used an autoencoder to select the subset of socks making up a portfolio. Now, it is time to find the relative weights of the stocks in the portfolio.
